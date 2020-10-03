@@ -36,7 +36,7 @@
 
 <body>
 
-  <div class="fizuha-logo-morph">
+  <div class="fizuha-logo-morph" style="display: none;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.226704 29.253866">
       <g transform="translate(-0.07933578,-0.02329571)">
         <path class="fizuha-logo-morph__logo"
@@ -51,7 +51,7 @@
 
         <path class="fizuha-logo-morph__morph" />
 
-        <g class="fizuha-logo-morph__text-bg" style="display: none;">
+        <g class="fizuha-logo-morph__text-bg">
           <path
             d="m 7.4375878,22.069702 v 2.461893 q 0,0.373197 -0.2588295,0.6679 -0.2588305,0.294703 -0.6380456,0.338442 l -0.012036,0.0014 Q 6.1614995,25.581675 5.902669,25.34668 5.6378203,25.112378 5.6378203,24.739181 v -5.591929 q 0,-0.457467 0.3310611,-0.826714 0.331062,-0.369246 0.7885288,-0.42201 l 3.0096503,-0.347134 q 0.3310615,-0.03818 0.5296985,0.191715 0.132425,0.147247 0.132425,0.406077 v 0.25883 q 0,0.186598 -0.222715,0.386846 -0.2227139,0.200248 -0.4394085,0.213202 l -2.3294727,0.160335 v 1.745597 L 9.7911341,20.53419 q 0.2648499,-0.04258 0.4695059,0.144484 0.204656,0.187071 0.210676,0.457244 v 0.01204 q 0,0.282907 -0.216695,0.512557 -0.216696,0.229649 -0.4634869,0.246076 z" />
           <path
@@ -66,7 +66,7 @@
             d="m 32.211022,19.639697 q 0,0 0,0.397275 0,0.626006 0.331062,1.027231 0.331061,0.401224 0.800567,0.335032 0.276888,-0.0018 0.559795,-0.11874 0.571833,-0.264592 0.571833,-0.932735 0,0 0,-2.034523 -0.108347,-0.330604 -0.626007,-0.463514 -0.51766,-0.13893 -1.077455,0.190484 -0.559795,0.323397 -0.559795,1.599488 z m -0.878818,2.178023 q -0.770471,-0.72374 -0.770471,-1.873426 0,-1.155706 0.770471,-2.057178 0.77047,-0.901472 1.865984,-1.027829 0.920952,-0.106223 1.276091,0.665421 0,-0.264849 0.198637,-0.486397 0.17456,-0.194693 0.439409,-0.225241 l 0.463485,-0.05346 q 0.26485,-0.03055 0.451448,0.12249 0.186599,0.177115 0.186599,0.441964 v 4.394089 q 0,0.156502 -0.108347,0.265308 -0.102328,0.108112 -0.246791,0.124775 l -0.722317,0.08331 Q 34.9799,22.2096 34.775244,22.01651 q -0.204656,-0.19309 -0.367177,-0.198422 -0.162521,-0.0053 -0.306985,0.107636 -0.595911,0.453968 -0.902894,0.489375 -1.095514,0.126357 -1.865984,-0.597382 z" />
         </g>
 
-        <g class="fizuha-logo-morph__text" style="display: none;">
+        <g class="fizuha-logo-morph__text">
           <path
             d="m 7.4457848,22.057501 v 2.461893 q 0,0.373197 -0.2588295,0.6679 -0.2588305,0.294703 -0.6380456,0.338442 l -0.012036,0.0014 Q 6.1696965,25.569474 5.910866,25.334479 5.6460173,25.100177 5.6460173,24.72698 v -5.591929 q 0,-0.457467 0.3310611,-0.826714 0.331062,-0.369246 0.7885288,-0.42201 l 3.0096503,-0.347134 q 0.3310615,-0.03819 0.5296985,0.191715 0.132425,0.147247 0.132425,0.406077 v 0.25883 q 0,0.186598 -0.222715,0.386846 -0.2227139,0.200248 -0.4394085,0.213202 l -2.3294727,0.160335 v 1.745597 l 2.3535463,-0.379806 q 0.2648499,-0.04258 0.4695059,0.144484 0.204656,0.187071 0.210676,0.457244 v 0.01204 q 0,0.282907 -0.216695,0.512557 -0.216696,0.229649 -0.4634869,0.246076 z" />
           <path
@@ -84,11 +84,8 @@
     </svg>
   </div>
 
-  <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://unpkg.com/flubber@0.3.0/build/flubber.min.js"></script>
   <script>
-    const duration = 2000;
-
     const logos = Array.from(document.querySelectorAll(".fizuha-logo-morph__logo"));
     const morph = document.querySelector(".fizuha-logo-morph__morph");
     const text = document.querySelector(".fizuha-logo-morph__text");
@@ -96,36 +93,39 @@
 
     morph.setAttribute("d", logos[0].getAttribute("d"));
     morph.style.fill = logos[0].style.fill;
-
-    textBackground.style.display = "block";
-    text.style.display = "block";
     text.style.fill = logos[0].style.fill;
 
-    setTimeout(animate, duration / 2);
+    document.querySelector(".fizuha-logo-morph").style.display = "block";
 
-    let i = 0;
-    function animate() {
+    (function draw() {
       const start = logos.shift();
       const end = logos[0];
       logos.push(start);
 
-      d3.select(".fizuha-logo-morph__text")
-        .transition()
-        .duration(duration)
-        .style("fill", end.style.fill);
+      const interpolator = flubber.interpolate(start.getAttribute("d"), end.getAttribute("d"), { maxSegmentLength: 0.1 });
 
-      d3.select(".fizuha-logo-morph__morph")
-        .datum({
-          start: start.getAttribute("d"),
-          end: end.getAttribute("d")
-        })
-        .transition()
-        .duration(duration)
-        .attrTween("d", function (d) {
-          return flubber.interpolate(d.start, d.end, { maxSegmentLength: 0.1 })
-        })
-        .style("fill", end.style.fill)
-        .on("end", animate);
+      setTimeout(() => animate({
+        draw: progress => morph.setAttribute("d", interpolator(progress)),
+        duration: 1000,
+        onEnd: draw
+      }), 1000);
+    })();
+
+    function animate({ timing = t => t, draw, duration, onEnd }) {
+      const start = performance.now();
+
+      requestAnimationFrame(function animate(time) {
+        const t = Math.min((time - start) / duration, 1);
+        const progress = timing(t);
+        
+        draw(progress);
+
+        if (t < 1) {
+          requestAnimationFrame(animate);
+        } else if (onEnd) {
+          onEnd();
+        }
+      });
     }
   </script>
 </body>
