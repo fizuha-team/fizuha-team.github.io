@@ -102,7 +102,7 @@
       const end = logos[0];
       logos.push(start);
 
-      const interpolator = flubber.interpolate(start.getAttribute("d"), end.getAttribute("d"), { maxSegmentLength: 0.1 });
+      const interpolator = flubber.interpolate(start.getAttribute("d"), end.getAttribute("d"), { maxSegmentLength: 1 });
 
       setTimeout(() => animate({
         draw: progress => morph.setAttribute("d", interpolator(progress)),
