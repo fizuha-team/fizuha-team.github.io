@@ -17,6 +17,7 @@
     }
 
     .fizuha-logo-morph path {
+      fill: #fff;
       transition: fill 1s linear;
     }
 
@@ -52,7 +53,7 @@
 
 <body>
 
-  <div class="fizuha-logo-morph fizuha-logo-morph--green">
+  <div class="fizuha-logo-morph">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.226704 29.253866">
       <g transform="translate(-0.07933578,-0.02329571)">
         <path class="fizuha-logo-morph__logo" data-color-mod="fizuha-logo-morph--green"
@@ -103,11 +104,17 @@
     const logos = Array.from(document.querySelectorAll(".fizuha-logo-morph__logo"));
     const morph = document.querySelector(".fizuha-logo-morph__morph");
 
-    morph.setAttribute("d", logos[0].getAttribute("d"));
+    startAnimation();
 
-    draw();
+    function startAnimation() {
+      morph.setAttribute("d", logos[0].getAttribute("d"));
+      block.classList.remove(...logos.map(el => el.dataset.colorMod));
+      block.classList.add(logos[0].dataset.colorMod);
 
-    function draw() {      
+      draw();
+    }
+
+    function draw() {
       const start = logos.shift();
       const end = logos[0];
       logos.push(start);
