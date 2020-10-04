@@ -67,23 +67,6 @@
     .fizuha-logo--bigger {
       width: 700px;
     }
-
-    .columns {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .columns>.column {
-      flex: 1 1 50%;
-    }
-
-    @media only screen and (min-width: 768px) {
-      .columns>.column {
-        flex: 1 1 30%;
-      }
-    }
   </style>
 </head>
 
@@ -91,7 +74,7 @@
 
   <div class="reveal">
     <div class="slides">
-      <section>
+      <section data-autoslide="0">
         <div class="fizuha-logo-morph">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41.226704 36.206402">
             <g transform="translate(-0.07933578,6.8273282)">
@@ -159,75 +142,39 @@
         </script>
       </section>
 
-      <section>
+      <section data-autoslide="2000">
         <h2>Test</h2>
-        <div class="columns">
-          <div class="column">
-            <img src="assets/images/challenge-01.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-02.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-03.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-04.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-05.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-06.png" />
-          </div>
+        <div class="r-stack">
+          <img class="fragment" src="assets/images/challenge-01.png" />
+          <img class="fragment" src="assets/images/challenge-02.png" />
+          <img class="fragment" src="assets/images/challenge-03.png" />
+          <img class="fragment" src="assets/images/challenge-04.png" />
+          <img class="fragment" src="assets/images/challenge-05.png" />
+          <img class="fragment" src="assets/images/challenge-06.png" />
         </div>
       </section>
 
-      <section>
+      <section data-autoslide="2000">
         <h2>Test</h2>
-        <div class="columns">
-          <div class="column">
-            <img src="assets/images/challenge-07.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-08.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-09.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-10.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-11.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-12.png" />
-          </div>
+        <div class="r-stack">
+          <img class="fragment" src="assets/images/challenge-07.png" />
+          <img class="fragment" src="assets/images/challenge-08.png" />
+          <img class="fragment" src="assets/images/challenge-09.png" />
+          <img class="fragment" src="assets/images/challenge-10.png" />
+          <img class="fragment" src="assets/images/challenge-11.png" />
+          <img class="fragment" src="assets/images/challenge-12.png" />
         </div>
       </section>
 
-      <section>
+      <section data-autoslide="2000">
         <h2>Test</h2>
-        <div class="columns">
-          <div class="column">
-            <img src="assets/images/challenge-13.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-14.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-15.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-16.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-17.png" />
-          </div>
-          <div class="column">
-            <img src="assets/images/challenge-18.png" />
-          </div>
+        <div class="r-stack">
+          <img class="fragment" src="assets/images/challenge-13.png" />
+          <img class="fragment" src="assets/images/challenge-14.png" />
+          <img class="fragment" src="assets/images/challenge-15.png" />
+          <img class="fragment" src="assets/images/challenge-16.png" />
+          <img class="fragment" src="assets/images/challenge-17.png" />
+          <img class="fragment" src="assets/images/challenge-18.png" />
         </div>
       </section>
 
@@ -242,6 +189,7 @@
   <script>
     Reveal.initialize({
       hash: true,
+      autoSlide: 10000,
       plugins: [RevealMarkdown]
     });
   </script>
