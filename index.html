@@ -9,7 +9,7 @@
   <meta property="og:url" content="https://fizuha-team.github.io/" />
   <meta property="og:type" content="website" />
   <meta property="og:title"
-    content="Fizuha - сервис для спортсменов и физкультурников с умной системой рейтингов и отслеживанием достижений" />
+    content="Fizuha - сервис для спортсменов и физкультурников с умной системой рейтингов и фиксированием рекордов" />
   <meta property="og:description"
     content="Кто круче тебя? Узнай на Fizuha. Участвуй в зарубах, становись лучшим в городе, стране и мире" />
   <meta property="og:image" content="https://fizuha-team.github.io/assets/images/logo.png" />
@@ -67,13 +67,27 @@
       paint-order: fill stroke;
     }
 
-    .fizuha-logo {
-      width: 640px;
-      transition: width 1s linear;
+    .fizuha-logo-pulsing {
+      height: 7em;
     }
 
-    .fizuha-logo--bigger {
-      width: 700px;
+    .fizuha-logo-pulsing__img {
+      height: 5em;
+      transition: height 1s linear;
+    }
+
+    .fizuha-logo-pulsing__img--bigger {
+      height: 6em;
+    }
+
+    .square-image {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .square-image {
+        width: 50%;
+      }
     }
   </style>
 </head>
@@ -131,63 +145,333 @@
         </div>
       </section>
 
-      <section data-markdown>
-        <script type="text/template">
-          Fizuha - сервис для спортсменов и физкультурников с умной системой рейтингов и отслеживанием достижений.
+      <section data-autoslide="5000">
+        <img src="assets/images/logo.png" alt="Fizuha" style="display: inline; height: 3em" />
+
+        <p>
+          <strong>Fizuha</strong> - сервис для спортсменов и физкультурников с умной системой рейтингов и фиксированием
+          рекордов.
+        </p>
+
+        <p class="fragment">
           Кто круче тебя? Узнай на Fizuha. Участвуй в зарубах, становись лучшим в городе, стране и мире.
-
-          
-
-          Рейтинг Эло
+        </p>
         </script>
       </section>
 
-      <section data-autoslide="2000">
-        <h2>Test</h2>
+      <section data-autoslide="2000" data-auto-animate>
+        <p>
+          Челленджи и заочные зарубы популярны среди
+        </p>
+        <p>
+          <strong>фитнес-блогеров</strong>
+        </p>
         <div class="r-stack">
-          <img class="fragment" src="assets/images/challenge-1-1.png" />
+          <img src="assets/images/challenge-1-1.png" />
           <img class="fragment" src="assets/images/challenge-1-2.png" />
           <img class="fragment" src="assets/images/challenge-1-3.png" />
-          <img class="fragment" src="assets/images/challenge-1-4.png" />
-          <img class="fragment" src="assets/images/challenge-1-5.png" />
         </div>
       </section>
 
-      <section data-autoslide="2000">
-        <h2>Test</h2>
+      <section data-autoslide="2000" data-auto-animate>
+        <p>
+          Челленджи и заочные зарубы популярны среди
+        </p>
+        <p>
+          <strong>профессиональных спортсменов</strong>
+        </p>
         <div class="r-stack">
-          <img class="fragment" src="assets/images/challenge-2-1.png" />
+          <img src="assets/images/challenge-2-1.png" />
           <img class="fragment" src="assets/images/challenge-2-2.png" />
           <img class="fragment" src="assets/images/challenge-2-3.png" />
-          <img class="fragment" src="assets/images/challenge-2-4.png" />
-          <img class="fragment" src="assets/images/challenge-2-5.png" />
         </div>
       </section>
 
-      <section data-autoslide="2000">
-        <h2>Test</h2>
+      <section data-autoslide="2000" data-auto-animate>
+        <p>
+          Челленджи и заочные зарубы популярны среди
+        </p>
+        <p>
+          <strong>спортсменов-любителей</strong>
+        </p>
         <div class="r-stack">
-          <img class="fragment" src="assets/images/challenge-3-1.png" />
+          <img src="assets/images/challenge-3-1.png" />
           <img class="fragment" src="assets/images/challenge-3-2.png" />
           <img class="fragment" src="assets/images/challenge-3-3.png" />
-          <img class="fragment" src="assets/images/challenge-3-4.png" />
-          <img class="fragment" src="assets/images/challenge-3-5.png" />
+        </div>
+      </section>
+
+      <section data-autoslide="7000" data-auto-animate>
+        <h3>Как это работает?</h3>
+        <ol>
+          <li>
+            Пользователи участвуют в <strong>челленджах</strong> и <strong>заочных зарубах</strong>, устанавливая
+            рекорды и зарабатывая <strong>очки рейтинга</strong>.
+          </li>
+          <li class="fragment">
+            Сильнейшие участвуют в <strong>очных зарубах</strong> и <strong>соревнованиях</strong> за звание
+            <strong>лучшего в своей местности</strong>.
+          </li>
+          <li class="fragment">
+            Победители местных соревнований приглашаются на <strong>турнир с популярными фитнес-блогерами и трансляцией
+              на YouTube</strong>.
+          </li>
+        </ol>
+      </section>
+
+      <section data-autoslide="5000" data-auto-animate>
+        <h3>Как это работает?</h3>
+        <img src="assets/images/leagues.png" alt="Лиги" />
+        <ul>
+          <li class="fragment">
+            Начиная с <strong>Обычной лиги</strong> пользователь переходит между
+            лигами с ростом рейтинга.
+          </li>
+          <li class="fragment">
+            Атлеты из <strong>Про-лиги</strong> участвуют в местных соревнованиях.
+          </li>
+          <li class="fragment">
+            Атлеты из <strong>Топ-лиги</strong> участвуют в турнирах с трансляцией на YouTube.
+          </li>
+        </ul>
+      </section>
+
+      <section data-auto-animate>
+        <h3>Зачем?</h3>
+        <ul>
+          <li>
+            <strong>профессиональные спортсмены</strong> могут
+            <ul>
+              <li>
+                стать популярными или еще популярнее
+              </li>
+              <li>
+                набрать подписчиков
+              </li>
+              <li>
+                найти спонсоров
+              </li>
+            </ul>
+          </li>
+          <li class="fragment">
+            <strong>спортсмены-любители</strong> могут
+            <ul>
+              <li>
+                заявить о себе и своих рекордах
+              </li>
+              <li>
+                раскрутить свой фитнес-блог
+              </li>
+              <li>
+                набрать подписчиков
+              </li>
+              <li>
+                найти новых клиентов как тренеру
+              </li>
+              <li>
+                найти единомышленников
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section data-auto-animate>
+        <h3>Зачем?</h3>
+        <ul>
+          <li>
+            <strong>организаторы спортивных мероприятий</strong> получают
+            <ul>
+              <li>
+                возможность чаще проводить соревнования
+              </li>
+              <li>
+                мотивацию участников благодаря продвижению в рейтинге
+              </li>
+              <li>
+                новых участников и зрителей
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section data-autoslide="5000" data-auto-animate>
+        <h3>Зачем?</h3>
+        <ul>
+          <li>
+            <strong>популярные фитнес-блогеры</strong> получают
+            <ul>
+              <li>
+                материал для новых выпусков
+              </li>
+              <li>
+                новых героев для своих блогов
+              </li>
+            </ul>
+          </li>
+          <li class="fragment">
+            <strong>поклонники спорта</strong> получают
+            <ul>
+              <li>
+                огромное количество нового контента
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <div>
+          Таблица лидеров рейтинга за разные периоды
+        </div>
+        <img class="square-image" src="assets/images/mock-leaderboards.png" alt="Таблицы лидеров" />
+      </section>
+
+      <section>
+        <p>
+          Рейтинг рассчитывается по <strong>системе Эло</strong>
+        </p>
+        <div class="r-stack">
+          <ul>
+            <li>
+              за победу атлет получает очки
+            </li>
+            <li>
+              за поражение атлет теряет очки
+            </li>
+            <li>
+              сильный атлет за победу над слабым получает меньше очков, чем если слабый выиграет у сильного
+            </li>
+          </ul>
+          <img class="fragment" src="assets/images/elo-rating.png" alt="Рейтинг Эло" />
         </div>
       </section>
 
       <section>
-        <img class="fizuha-logo" src="assets/images/logo.svg" alt="Fizuha Logo">
+        <div>
+          Можно стать рекордсменом в упражнении в категориях по полу, возрасту, весу и по местности
+        </div>
+        <img class="square-image" src="assets/images/mock-records.png" alt="Рекорды" />
+      </section>
+
+      <section>
+        <div>
+          В профиле атлета указаны все его достижения и ссылки на соцсети
+        </div>
+        <img class="square-image" src="assets/images/mock-profile.png" alt="Профиль" />
+      </section>
+
+      <section>
+        <div>
+          Все видео заочных заруб будут отображаться в бесконечной ленте в стиле Instagram и TikTok
+        </div>
+        <img src="assets/images/mock-challanges.png" alt="Челленджи" />
+      </section>
+
+      <section data-auto-animate>
+        <h3>Бизнес-модель</h3>
+        <ul>
+          <li class="fragment">
+            <strong>Продажа франшизы по организации местных соревнований</strong>
+            <ul>
+              <li>
+                использование бренда
+              </li>
+              <li>
+                анонс и освещение результатов соревнований в сервисе
+              </li>
+              <li>
+                внесение результатов в рейтинг
+              </li>
+            </ul>
+          </li>
+          <li class="fragment">
+            <strong>Реклама на сайте и в приложениях</strong>
+            <ul>
+              <li>
+                ценная из-за концентрации целевой аудитории
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section data-auto-animate>
+        <h3>Бизнес-модель</h3>
+        <ul>
+          <li>
+            <strong>Монетизация с YouTube канала</strong>
+            <ul>
+              <li>
+                благодаря притоку аудитории на основной YouTube канал
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section data-autoslide="5000">
+        <h3>Конкуренты</h3>
+        <ul>
+          <li class="fragment">
+            <a href="https://www.strava.com/" target="_blank">Strava</a> - сервис для отслеживания активности
+            спортсменов с помощью мобильных устройств.
+          </li>
+          <li class="fragment">
+            <a href="https://www.sponsoo.com/" target="_blank">Sponsoo</a> соединяет спонсоров с тысячами спортсменов и
+            клубами по 300 различным видам спорта
+          </li>
+          <li class="fragment">
+            <a href="https://www.armwrestlingranking.com/ratings" target="_blank">Unified Rating of Professional
+              Armwrestling (URPA)</a> - объединенный рейтинг армрестлеров от Professional Armwrestling League (PAL)
+          </li>
+          <li class="fragment">
+            <a href="https://www.armbet.com/" target="_blank">Armbet</a> - сервис для поиска спарринг-партнеров по
+            армрестлингу
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Сотрудничество</h3>
+        <p class="fragment">
+          На данном этапе
+          <span class="fragment highlight-green">мы не ищем финансирование</span>.
+        </p>
+        <p class="fragment">
+          Мы ищем
+        </p>
+        <ul>
+          <li class="fragment">
+            <strong>партнера по продвижению в медиа</strong>
+            <br />
+            для первоначального привлечения аудитории
+          </li>
+          <li class="fragment">
+            <strong>партнера по организации турниров для Топ-лиги</strong>
+            <br/>
+            с трансляцией на YouTube
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="fizuha-logo-pulsing">
+          <img class="fizuha-logo-pulsing__img" src="assets/images/logo.svg" alt="Fizuha Logo">
+        </div>
+        <div>
+          <a href="mailto:fizuha@protonmail.com">fizuha@protonmail.com</a>
+        </div>
       </section>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/dist/reveal.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/markdown/markdown.js"></script>
   <script>
     Reveal.initialize({
       hash: true,
-      autoSlide: 10000,
-      plugins: [RevealMarkdown]
+      autoSlide: 10000
     });
   </script>
 
@@ -243,7 +527,9 @@
       });
     }
 
-    setInterval(() => document.querySelector(".fizuha-logo").classList.toggle("fizuha-logo--bigger"), 1000);
+    setInterval(() =>
+      document.querySelector(".fizuha-logo-pulsing__img").classList.toggle("fizuha-logo-pulsing__img--bigger"),
+      1000);
   </script>
 </body>
 
